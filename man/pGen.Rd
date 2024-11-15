@@ -21,6 +21,10 @@ A vector of probabilities for each number of generations from 1 to gmax
 Probability that one initial case leads to an outbreak lasting
 less than g generations of transmission.
 }
+\examples{
+# Probability of outbreak lasting less than 1,2,3,...,10 generations:
+pGen(gMax=10, R=0.9, k=0.1)
+}
 \author{
 Damon Toth
 }
