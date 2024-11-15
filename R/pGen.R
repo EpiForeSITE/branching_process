@@ -1,9 +1,9 @@
 #' Probability that one initial case leads to an outbreak lasting
 #' less than g generations of transmission.
 #'
-#' @param gMax maximum number of generations.
-#' @param R reproduction number.
-#' @param k dispersion parameter.
+#' @param gMax Maximum number of generations.
+#' @param R Reproduction number.
+#' @param k Dispersion parameter.
 #' @author Damon Toth
 #' @returns A vector of probabilities for each number of generations from 1 to gmax
 #' @export

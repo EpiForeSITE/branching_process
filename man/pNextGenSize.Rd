@@ -7,13 +7,13 @@
 pNextGenSize(x, y, R, k)
 }
 \arguments{
-\item{x}{number of infected individuals in generation n}
+\item{x}{Number of infected individuals in generation n}
 
-\item{y}{number of total transmissions in generation n+1}
+\item{y}{Number of total transmissions in generation n+1}
 
-\item{R}{mean of negative binomial offspring distribution}
+\item{R}{Mean of negative binomial offspring distribution}
 
-\item{k}{dispersion of negative binomial offspring distribution}
+\item{k}{Dispersion of negative binomial offspring distribution}
 }
 \value{
 The probability of the given number of transmissions

@@ -1,9 +1,9 @@
 #' Probability of y total transmission directly from x independent infected individuals
 #'
-#' @param x number of infected individuals in generation n
-#' @param y number of total transmissions in generation n+1
-#' @param R mean of negative binomial offspring distribution
-#' @param k dispersion of negative binomial offspring distribution
+#' @param x Number of infected individuals in generation n
+#' @param y Number of total transmissions in generation n+1
+#' @param R Mean of negative binomial offspring distribution
+#' @param k Dispersion of negative binomial offspring distribution
 #' @returns The probability of the given number of transmissions
 #' @examples
 #' # With 5 individuals in this generation, what is the probability of

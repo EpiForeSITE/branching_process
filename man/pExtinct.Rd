@@ -7,9 +7,9 @@
 pExtinct(R, k)
 }
 \arguments{
-\item{R}{reproduction number: mean of negative binomial offspring distribution}
+\item{R}{Reproduction number: mean of negative binomial offspring distribution}
 
-\item{k}{dispersion parameter of negative binomial offspring distribution}
+\item{k}{Dispersion parameter of negative binomial offspring distribution}
 }
 \value{
 The probability of outbreak extinction

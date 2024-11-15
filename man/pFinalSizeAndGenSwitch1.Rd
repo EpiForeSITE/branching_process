@@ -7,19 +7,19 @@
 pFinalSizeAndGenSwitch1(g, n, j, R0, k0, Rc, kc)
 }
 \arguments{
-\item{g}{number of generations}
+\item{g}{Number of generations}
 
-\item{n}{number of initial cases}
+\item{n}{Number of initial cases}
 
-\item{j}{final size}
+\item{j}{Final size}
 
-\item{R0}{mean of negative binomial offspring distribution from generation one}
+\item{R0}{Mean of negative binomial offspring distribution from generation one}
 
-\item{k0}{dispersion of negative binomial offspring distribution from generation one}
+\item{k0}{Dispersion of negative binomial offspring distribution from generation one}
 
-\item{Rc}{mean of negative binomial offspring distribution from generation two on}
+\item{Rc}{Mean of negative binomial offspring distribution from generation two on}
 
-\item{kc}{dispersion of negative binomial offspring distribution from generation two on}
+\item{kc}{Dispersion of negative binomial offspring distribution from generation two on}
 }
 \value{
 The joint probability of outbreak final size and number of transmission generations

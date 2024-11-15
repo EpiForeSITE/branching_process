@@ -1,12 +1,12 @@
 #' Joint probability of outbreak final size and number of transmission generations
 #'
-#' @param g number of generations
-#' @param n number of initial cases
-#' @param j final size
-#' @param R0 mean of negative binomial offspring distribution from generation one
-#' @param k0 dispersion of negative binomial offspring distribution from generation one
-#' @param Rc mean of negative binomial offspring distribution from generation two on
-#' @param kc dispersion of negative binomial offspring distribution from generation two on
+#' @param g Number of generations
+#' @param n Number of initial cases
+#' @param j Final size
+#' @param R0 Mean of negative binomial offspring distribution from generation one
+#' @param k0 Dispersion of negative binomial offspring distribution from generation one
+#' @param Rc Mean of negative binomial offspring distribution from generation two on
+#' @param kc Dispersion of negative binomial offspring distribution from generation two on
 #' @author Damon Toth
 #' @returns The joint probability of outbreak final size and number of transmission generations
 #' @export

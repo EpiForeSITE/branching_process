@@ -1,11 +1,11 @@
 #' Probability that one initial case leads to an outbreak lasting
 #' less than g generations of transmission.
 #'
-#' @param gMax maximum number of generations
-#' @param R0 basic reproduction number: mean of negative binomial offspring distribution from generation one
-#' @param k0 dispersion of negative binomial offspring distribution from generation one
-#' @param Rc control reproduction number: mean of negative binomial offspring distribution from generation two plus
-#' @param kc dispersion of negative binomial offspring distribution from generation two plus
+#' @param gMax Maximum number of generations
+#' @param R0 Basic reproduction number: mean of negative binomial offspring distribution from generation one
+#' @param k0 Dispersion of negative binomial offspring distribution from generation one
+#' @param Rc Control reproduction number: mean of negative binomial offspring distribution from generation two plus
+#' @param kc Dispersion of negative binomial offspring distribution from generation two plus
 #' @returns A vector of probabilities for each number of generations from 1 to gmax
 #' @author Damon Toth
 #' @export

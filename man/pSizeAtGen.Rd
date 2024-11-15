@@ -8,15 +8,15 @@ of transmission AND has exactly j total cases after generation g}
 pSizeAtGen(g, n, j, R, k)
 }
 \arguments{
-\item{g}{number of generations of transmission}
+\item{g}{Number of generations of transmission}
 
-\item{n}{number of initial cases}
+\item{n}{Number of initial cases}
 
-\item{j}{total size of outbreak after generation g}
+\item{j}{Total size of outbreak after generation g}
 
-\item{R}{reproduction number: mean of negative binomial offspring distribution}
+\item{R}{Reproduction number: mean of negative binomial offspring distribution}
 
-\item{k}{dispersion parameter of negative binomial offspring distribution}
+\item{k}{Dispersion parameter of negative binomial offspring distribution}
 }
 \value{
 The probability of the given outbreak size at the given generation

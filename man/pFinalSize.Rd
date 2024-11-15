@@ -7,13 +7,13 @@
 pFinalSize(n, j, R, k)
 }
 \arguments{
-\item{n}{number of initial cases in generation 0}
+\item{n}{Number of initial cases in generation 0}
 
-\item{j}{total outbreak size (>= n).}
+\item{j}{Total outbreak size (>= n).}
 
-\item{R}{mean of negative binomial offspring distribution}
+\item{R}{Mean of negative binomial offspring distribution}
 
-\item{k}{dispersion of negative binomial offspring distribution}
+\item{k}{Dispersion of negative binomial offspring distribution}
 }
 \value{
 The final size probability

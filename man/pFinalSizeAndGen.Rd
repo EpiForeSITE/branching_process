@@ -7,15 +7,15 @@
 pFinalSizeAndGen(g, n, j, R, k)
 }
 \arguments{
-\item{g}{number of generations.}
+\item{g}{Number of generations.}
 
-\item{n}{number of initial cases}
+\item{n}{Number of initial cases}
 
-\item{j}{final size}
+\item{j}{Final size}
 
-\item{R}{reproduction number}
+\item{R}{Reproduction number}
 
-\item{k}{dispersion parameter}
+\item{k}{Dispersion parameter}
 }
 \value{
 The joint probability of the final outbreak size and number of transmission generations

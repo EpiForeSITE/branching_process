@@ -8,11 +8,11 @@ less than g generations of transmission.}
 pGen(gMax, R, k)
 }
 \arguments{
-\item{gMax}{maximum number of generations.}
+\item{gMax}{Maximum number of generations.}
 
-\item{R}{reproduction number.}
+\item{R}{Reproduction number.}
 
-\item{k}{dispersion parameter.}
+\item{k}{Dispersion parameter.}
 }
 \value{
 A vector of probabilities for each number of generations from 1 to gmax

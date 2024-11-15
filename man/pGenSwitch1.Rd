@@ -8,15 +8,15 @@ less than g generations of transmission.}
 pGenSwitch1(gMax, R0, k0, Rc, kc)
 }
 \arguments{
-\item{gMax}{maximum number of generations}
+\item{gMax}{Maximum number of generations}
 
-\item{R0}{basic reproduction number: mean of negative binomial offspring distribution from generation one}
+\item{R0}{Basic reproduction number: mean of negative binomial offspring distribution from generation one}
 
-\item{k0}{dispersion of negative binomial offspring distribution from generation one}
+\item{k0}{Dispersion of negative binomial offspring distribution from generation one}
 
-\item{Rc}{control reproduction number: mean of negative binomial offspring distribution from generation two plus}
+\item{Rc}{Control reproduction number: mean of negative binomial offspring distribution from generation two plus}
 
-\item{kc}{dispersion of negative binomial offspring distribution from generation two plus}
+\item{kc}{Dispersion of negative binomial offspring distribution from generation two plus}
 }
 \value{
 A vector of probabilities for each number of generations from 1 to gmax

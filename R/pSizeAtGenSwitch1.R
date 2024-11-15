@@ -1,13 +1,13 @@
 #' Probability that n initial cases lead to an outbreak that lasts at least g generations
 #' of transmission AND has exactly j total cases after generation g
 #'
-#' @param g number of generations of transmission
-#' @param n number of initial cases
-#' @param j total size of outbreak after generation g
-#' @param R0 basic reproduction number: mean of negative binomial offspring distribution from generation one
-#' @param k0 dispersion parameter of negative binomial offspring distribution from generation one
-#' @param Rc control reproduction number: mean of negative binomial offspring distribution from generation two plus
-#' @param kc dispersion parameter of negative binomial offspring distribution from generation two plus
+#' @param g Number of generations of transmission
+#' @param n Number of initial cases
+#' @param j Total size of outbreak after generation g
+#' @param R0 Basic reproduction number: mean of negative binomial offspring distribution from generation one
+#' @param k0 Dispersion parameter of negative binomial offspring distribution from generation one
+#' @param Rc Control reproduction number: mean of negative binomial offspring distribution from generation two plus
+#' @param kc Dispersion parameter of negative binomial offspring distribution from generation two plus
 #' @author Damon Toth
 #' @returns The probability of the given outbreak size at the given transmission generation
 #' @export

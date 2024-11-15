@@ -1,9 +1,9 @@
 #' Final outbreak size probability
 #'
-#' @param n number of initial cases in generation 0
-#' @param j total outbreak size (>= n).
-#' @param R mean of negative binomial offspring distribution
-#' @param k dispersion of negative binomial offspring distribution
+#' @param n Number of initial cases in generation 0
+#' @param j Total outbreak size (>= n).
+#' @param R Mean of negative binomial offspring distribution
+#' @param k Dispersion of negative binomial offspring distribution
 #' @returns The final size probability
 #' @examples
 #' # With 5 initial individuals and negative binomial offspring distribution with mean R=0.2

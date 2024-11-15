@@ -1,7 +1,7 @@
 #' Probability that one initial case leads to an outbreak that eventually dies out (stochastic extinction)
 #'
-#' @param R reproduction number: mean of negative binomial offspring distribution
-#' @param k dispersion parameter of negative binomial offspring distribution
+#' @param R Reproduction number: mean of negative binomial offspring distribution
+#' @param k Dispersion parameter of negative binomial offspring distribution
 #' @author Damon Toth
 #' @returns The probability of outbreak extinction
 #' @export

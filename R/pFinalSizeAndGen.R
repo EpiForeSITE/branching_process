@@ -1,10 +1,10 @@
 #' Joint probability of outbreak final size and number of transmission generations
 #'
-#' @param g number of generations.
-#' @param n number of initial cases
-#' @param j final size
-#' @param R reproduction number
-#' @param k dispersion parameter
+#' @param g Number of generations.
+#' @param n Number of initial cases
+#' @param j Final size
+#' @param R Reproduction number
+#' @param k Dispersion parameter
 #' @returns The joint probability of the final outbreak size and number of transmission generations
 #' @author Damon Toth
 #' @export
