@@ -27,7 +27,7 @@ less than g generations of transmission.
 }
 \examples{
 # Probability of outbreak lasting less than 1,2,3,...,10 generations:
-pGenSwitch1(gmax=10, R0=3, k0=0.1, Rc=0.5, kc=1)
+pGenSwitch1(gMax=10, R0=3, k0=0.1, Rc=0.5, kc=1)
 }
 \author{
 Damon Toth
