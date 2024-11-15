@@ -29,6 +29,11 @@ The probability of the given outbreak size at the given transmission generation
 Probability that n initial cases lead to an outbreak that lasts at least g generations
 of transmission AND has exactly j total cases after generation g
 }
+\examples{
+#Probability that 10 initial cases leads to an outbreak lasting at least
+# 3 transmission generations and is of exact size 30 after 3 generations  
+pSizeAtGenSwitch1(g=3,n=10,j=30,R0=2,k0=0.5,Rc=0.5,kc=1)
+}
 \author{
 Damon Toth
 }
