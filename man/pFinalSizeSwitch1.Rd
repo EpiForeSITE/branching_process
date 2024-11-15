@@ -28,6 +28,7 @@ outbreak of total size j after any number of transmission generations (j include
 the n initial cases)
 }
 \examples{
-pFinalSizeSwitch1(5, 5:20, R0=2, k0=0.1, Rc=0.2, kc=0.1)
-
+With 5 initial cases, the probability that the final outbreak size is 5 to 20
+(including the initial 5):
+pFinalSizeSwitch1(n=5, j=5:20, R0=2, k0=0.1, Rc=0.2, kc=0.1)
 }
