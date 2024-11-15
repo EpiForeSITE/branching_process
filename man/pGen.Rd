@@ -15,7 +15,7 @@ pGen(gMax, R, k)
 \item{k}{dispersion parameter.}
 }
 \value{
-The vector of probabilities for each number of generations from 1 to gmax
+A vector of probabilities for each number of generations from 1 to gmax
 }
 \description{
 Probability that one initial case leads to an outbreak lasting

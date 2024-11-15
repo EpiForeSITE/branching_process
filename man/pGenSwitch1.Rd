@@ -18,6 +18,9 @@ pGenSwitch1(gMax, R0, k0, Rc, kc)
 
 \item{kc}{dispersion of negative binomial offspring distribution from generation two plus}
 }
+\value{
+A vector of probabilities for each number of generations from 1 to gmax
+}
 \description{
 Probability that one initial case leads to an outbreak lasting
 less than g generations of transmission.

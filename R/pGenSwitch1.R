@@ -6,6 +6,7 @@
 #' @param k0 dispersion of negative binomial offspring distribution from generation one
 #' @param Rc control reproduction number: mean of negative binomial offspring distribution from generation two plus
 #' @param kc dispersion of negative binomial offspring distribution from generation two plus
+#' @returns A vector of probabilities for each number of generations from 1 to gmax
 #' @author Damon Toth
 #' @export
 pGenSwitch1 <- function(gMax,R0,k0,Rc,kc){

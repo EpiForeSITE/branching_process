@@ -5,7 +5,7 @@
 #' @param R reproduction number.
 #' @param k dispersion parameter.
 #' @author Damon Toth
-#' @returns The vector of probabilities for each number of generations from 1 to gmax
+#' @returns A vector of probabilities for each number of generations from 1 to gmax
 #' @export
 pGen <- function(gMax,R,k){
   pgl <- rep(0,gMax)
