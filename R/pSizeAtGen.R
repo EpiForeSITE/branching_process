@@ -8,6 +8,10 @@
 #' @param k Dispersion parameter of negative binomial offspring distribution
 #' @author Damon Toth
 #' @returns The probability of the given outbreak size at the given generation
+#' @examples
+#' #Probability that 10 initial cases leads to an outbreak lasting at least
+#' # 3 transmission generations and is of exact size 30 after 3 generations  
+#' pSizeAtGen(g=3,n=10,j=30,R=2,k=0.5)
 #' @export
 pSizeAtGen <- function(g,n,j,R,k){
   
