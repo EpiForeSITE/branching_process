@@ -15,11 +15,14 @@ pNextGenSize(x, y, R, k)
 
 \item{k}{dispersion of negative binomial offspring distribution}
 }
+\value{
+The probability of the given number of transmissions
+}
 \description{
 Probability of y total transmission directly from x independent infected individuals
 }
 \examples{
 # With 5 individuals in this generation, what is the probability of
 # 0 to 15 transmissions in the next generation?
-pNextGenSize(5, 0:15, R=0.2, k=0.1)
+pNextGenSize(x=5, y=0:15, R=0.2, k=0.1)
 }
