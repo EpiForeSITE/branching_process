@@ -9,6 +9,10 @@
 #' @param kc Dispersion of negative binomial offspring distribution from generation two on
 #' @author Damon Toth
 #' @returns The joint probability of outbreak final size and number of transmission generations
+#' @examples
+#' # Probability that 1 initial infection leads to an outbreak of final size 20 over exactly
+#' # 3 generations of transmission:
+#' pFinalSizeAndGenSwitch1(g=3,n=1,j=20,R0=2,k0=0.1,Rc=0.5,kc=1)
 #' @export
 pFinalSizeAndGenSwitch1 <- function(g,n,j,R0,k0,Rc,kc){
   
