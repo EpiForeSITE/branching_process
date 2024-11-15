@@ -12,8 +12,8 @@
 #' @param kc Dispersion of negative binomial offspring distribution from generation two on
 #' @returns The probability of the final outbreak size
 #' @examples
-#' With 5 initial cases, the probability that the final outbreak size is 5 to 20
-#' (including the initial 5):
+#' #With 5 initial cases, the probability that the final outbreak size is 5 to 20
+#' #(including the initial 5):
 #' pFinalSizeSwitch1(n=5, j=5:20, R0=2, k0=0.1, Rc=0.2, kc=0.1)
 #' @export
 pFinalSizeSwitch1 <- function(n,j,R0,k0,Rc,kc){

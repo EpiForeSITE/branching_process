@@ -8,6 +8,9 @@
 #' @param kc Dispersion of negative binomial offspring distribution from generation two plus
 #' @returns A vector of probabilities for each number of generations from 1 to gmax
 #' @author Damon Toth
+#' @examples
+#' # Probability of outbreak lasting less than 1,2,3,...,10 generations:
+#' pGenSwitch1(gmax=10, R0=3, k0=0.1, Rc=0.5, kc=1)
 #' @export
 pGenSwitch1 <- function(gMax,R0,k0,Rc,kc){
   pgl <- rep(0,gMax)
