@@ -7,6 +7,7 @@
 #' @param R reproduction number: mean of negative binomial offspring distribution
 #' @param k dispersion parameter of negative binomial offspring distribution
 #' @author Damon Toth
+#' @returns The probability of the given outbreak size at the given generation
 #' @export
 pSizeAtGen <- function(g,n,j,R,k){
   
