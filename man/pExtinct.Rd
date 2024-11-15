@@ -17,6 +17,11 @@ The probability of outbreak extinction
 \description{
 Probability that one initial case leads to an outbreak that eventually dies out (stochastic extinction)
 }
+\examples{
+# Probability that a single case leads to an extinct outbreak when the offspring distribution
+# is negative binomial with mean 2 and dispersion parameter 0.5:
+pExtinct(R=2,k=0.5)
+}
 \author{
 Damon Toth
 }
