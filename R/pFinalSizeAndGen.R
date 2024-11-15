@@ -7,6 +7,10 @@
 #' @param k Dispersion parameter
 #' @returns The joint probability of the final outbreak size and number of transmission generations
 #' @author Damon Toth
+#' @examples
+#' # Probability that 1 initial infection leads to an outbreak of final size 20 over exactly
+#' # 3 generations of transmission:
+#' pFinalSizeAndGen(g=3,n=1,j=20,R=0.8,k=0.1)
 #' @export
 pFinalSizeAndGen <- function(g,n,j,R,k){
   
