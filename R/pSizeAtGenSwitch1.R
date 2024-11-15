@@ -9,6 +9,7 @@
 #' @param Rc control reproduction number: mean of negative binomial offspring distribution from generation two plus
 #' @param kc dispersion parameter of negative binomial offspring distribution from generation two plus
 #' @author Damon Toth
+#' @returns The probability of the given outbreak size at the given transmission generation
 #' @export
 pSizeAtGenSwitch1 <- function(g,n,j,R0,k0,Rc,kc){
   

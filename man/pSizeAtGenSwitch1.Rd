@@ -22,6 +22,9 @@ pSizeAtGenSwitch1(g, n, j, R0, k0, Rc, kc)
 
 \item{kc}{dispersion parameter of negative binomial offspring distribution from generation two plus}
 }
+\value{
+The probability of the given outbreak size at the given transmission generation
+}
 \description{
 Probability that n initial cases lead to an outbreak that lasts at least g generations
 of transmission AND has exactly j total cases after generation g
