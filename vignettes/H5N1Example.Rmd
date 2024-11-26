@@ -17,11 +17,11 @@ knitr::opts_chunk$set(
 ```
 ## Introduction
 
-This is a vignette to demonstrate potential use of functions in the R package `branchingprocess` to quantify outbreak risk posed by an infectious disease with emerging transmission potential.
+This vignette provides a demonstration of the functions available in the R package `branchingprocess`. This package quantifies outbreak risk posed by an infectious disease with emerging transmission potential.
 
-Some emerging infectious organisms have the ability to transmit from person to person, but the risk of the organism causing an outbreak that infects many individuals over multiple generations of transmission is unclear. Perhaps a pathogen exists primarily in non-human animal reservoirs but occasionally spills over to humans, and those humans may or may not transmit to one or two family members. Sometimes, a spillover event leads to an outbreak infecting dozens of people over a few generations of transmission before fizzling out.
+Even when infectious pathogens are able to transmit from person to person, the realized risk of a particular pathogen causing an outbreak that infects many individuals over multiple generations of transmission is uncertain. For example, zoonotic pathogens that primarily exist in non-human animal reservoirs occasionally spill over to humans, and but onward transmission from human to human may or may not occur. Even when a spillover event leads to an outbreak infecting dozens of people, onward transmission often fizzles out.
 
-What are the chances that a new spillover event will lead to an ever larger outbreak than what has been seen so far? Is it possible that an extremely large outbreak has a reasonable chance of happening and has been avoided so far only by random chance? The functions in this package can help provide quantitative answers to these questions.
+Thus we can ask, what is the probabilty that a new spillover event will lead to an ever larger outbreak than what has been observed during past outbreaks? In other words, have large outbreaks been avoided up to the current time point simply by chance? The functions in this package can help provide quantitative answers to these questions.
 
 ```{r setup}
 library(branchingprocess)
@@ -29,23 +29,25 @@ library(branchingprocess)
 
 ## Offspring distribution
 
-A branching process is a stochastic (random) process in which each individual in generation $n$ produces a random number of individuals, or "offspring," in generation $n+1$, continuing for some number of generations or until there are no individuals remaining. If no individuals remain, i.e. every individual in the last generation produced no offspring, we call this extinction.
+A branching process is a stochastic (random) process in which each infected individual in generation $n$ produces a random number of new infected individuals, or "offspring," in generation $n+1$, continuing for some number of generations or until there are no newly infected individuals remaining. If no infected individuals remain this is called extinction.
 
-The random number of next-generation individuals produced by each individual is drawn from the offspring distribution, a discrete probability distribution with non-negative range. To model infectious disease outbreaks, it is common to use a negative binomial offspring distribution with two parameters: the mean $R$ and dispersion parameter $k$. 
+The random number of "offspring" infections produced by each infected individual is drawn from the offspring distribution, a discrete probability distribution with non-negative range. To model infectious disease outbreaks, it is common to use a negative binomial offspring distribution with two parameters: the mean $R$ (Is is confusing here why you use $R$ instead of $r$. Explain somewhere here that the mean is actually the reprductive number $R$.) and dispersion parameter $k$. 
 
 $R$ is the reproduction number, the expected (mean) number of transmissions from an infected individual. For a fixed value of $R$, a lower dispersion $k$ gives a higher variance of the negative binomial distribution: variance = $R + R^2/k$. Infectious diseases with a lower value of $k$ exhibit a higher rate of "superspreading" events, in which a single individual produces a number of transmission substantially higher than the mean. 
 
-This parameterization of the negative binomial distribution is equivalent to using `mu = R` and `size = k` in the native `NegBinomial`, e.g. `dnbinom(x, mu=R, size=k)` would give the density, i.e. the probability of exactly $x$ transmissions from one individual.
+(I deleted this because it is redundant with what you have above.) 
 
-The function `pNextGenSize(x,y,R,k)` extends the `dnbinom()` function to more than one potentially transmitting individual. I.e. it calculates the probability that `x` individuals in one generation transmit to a total of `y` individuals in the next generation, where each of the `x` individuals independently transmits according the negative binomial distribution parameterized by `R` and `k`.
+##`pNextGenSize(x,y,R,k)` function
 
-Example: With $R=0.8$ and $k=0.1$, and with 2 individuals infected, what is the probability that those 2 individuals will produce a total of exactly 5 transmissions in the next generation?
+The function `pNextGenSize(x,y,R,k)` extends the `dnbinom()` function to more than one potentially transmitting individual (i.e. it calculates the probability that `x` individuals in one generation transmit to a total of `y` individuals in the next generation, where each of the `x` individuals independently transmits according the negative binomial distribution parameterized by `R` and `k`).
+
+Example Problem: With $R=0.8$ and $k=0.1$, and with 2 individuals infected, what is the probability that those 2 individuals will produce a total of exactly 5 transmissions in the next generation?
 
 ```{r}
 pNextGenSize(x=2, y=5, R=0.8, k=0.1)
 ```
 
-There is about a 2.1% chance that the next generation will consist of exactly 5 infected individuals. Note that `pNextGenSize()` does not explicitly calculate the component probabilities for each of the two potential transmitters (e.g., one transmitting to 2 and other transmitting to 3, etc.). It is an efficient calculation for the probability that the total number of transmissions is 5.
+There is about a 2.1% chance that the next generation will consist of exactly 5 infected individuals. Note that `pNextGenSize()` does not explicitly calculate the component probabilities for each of the two potential transmitters (e.g., one transmitting to 2 and other transmitting to 3, etc.). It is an efficient (I don't understand what you mean by "efficient" in this sentence) calculation for the probability that the total number of transmissions is 5.
 
 ## Dispersion effects
 
@@ -59,20 +61,20 @@ The results show the probability (times 100, or % chance) that two individuals t
 
 With a high value of $k=10$, there is only a 21% chance that no transmissions occur, but the probability of a higher numbers of transmissions drops quickly: there is only a 0.002% or approximately one-in-500 chance that 10 transmissions occur. 
 
-With a low value of $k=0.1$, we see some very different results despite the fact that the reproduction number is the same. From the perspective of public health, a lower value of $k$ is a mixture of good and bad news. The good news is that the probability of no transmissions (the best case scenario) has risen to 64%, about 3 times higher than the result for $k=10$. The bad news is that if transmissions do occur, there is a substantially higher chance that the number of transmissions will be high; for example there is a 0.8% chance of 10 total transmissions from the first two individuals.
+With a low value of $k=0.1$, we see some very different results despite the fact that the reproduction number is the same. This is because the varaince of the negative binomial distribution is inversly proportional to that value of $k$. From the perspective of public health, a lower value of $k$ is a mixture of good and bad news. The good news is that the probability of no transmissions (the best case scenario) has risen to 64%, about 3 times higher than the result for $k=10$. The bad news is that if transmissions do occur, there is a substantially higher chance that the number of transmissions will be high; for example there is a 0.8% chance of 10 total transmissions from the first two individuals.
 
 ## Final size distribution
 
-Of course, if the initial cases produce transmissions in the next generation, the outbreak may not end there. Those transmissions produce potentially infectious individuals in the second generation who can subsequently transmit to produce a third generation, and so on. If $R$ does not exceed 1, it is mathematically provable that the outbreak will eventual go extinct, i.e. there will be eventually be a generation of infected individuals who all produce zero transmissions. But how big could an outbreak get before that happens?
+Of course, if the initial cases produce transmissions in the next generation, the proability of a "small" outbreak occuring is non-zero. Those transmissions produce potentially infectious individuals in the second generation who can subsequently transmit to produce a third generation, and so on. If $R$ does not exceed 1, it is mathematically provable that the outbreak will eventual go extinct even if a second or third generation of infections occurs, i.e. there will be eventually be a generation of infected individuals who all produce zero transmissions. Nonetheless, it is still important to ask: how big could an outbreak get before extinction inevidibly occurs?
 
-A common approach to analyzing the distribution of stochastic outbreak sizes is to run repeated simulations of outbreaks that randomize transmissions from each simulated individual and repeat, e.g. within a `while` loop, until no further transmissions can occur. However, there are mathematical formulae derived in the literature that can efficiently calculate the distribution of final outbreak sizes with no simulation needed. 
+A common approach to analyzing the distribution of stochastic outbreak sizes is to run repeated simulations of outbreaks that randomize transmissions from each simulated individual and repeat, e.g. within a `while` loop, until no further transmissions can occur. However, there are mathematical formulae derived in the literature that can efficiently calculate the distribution of final outbreak sizes with no simulation needed (add a citation here). 
 
 The function `pFinalSize()` makes use of such a formula, for the case of the same negative binomial offspring distribution applied independently to each infected individual. For example,
 
 ```{r}
 pFinalSize(n=2, j=12, R=0.8, k=0.1)
 ```
-This calculated the probability that, with $R=0.8$ and $k=0.1$ applied to every case, 2 initially infected individuals produce an outbreak that ends with a final size of 12, i.e. the 2 initial cases plus 10 subsequent cases, over any possible number of transmission generations.
+This calculated the probability that, with $R=0.8$ and $k=0.1$ applied to every case, $n=2$ initially infected individuals produce an outbreak that ends with a final size of $j=12$, i.e. the $n=2$ initial cases plus 10 subsequent cases, over any possible number of transmission generations.
 
 ## Estimates from outbreak cluster data
 
@@ -80,7 +82,7 @@ Now let's look at an example of how this function could be applied to study data
 
 Say there are 30 H5N1 human infections from zoonotic spillover events, i.e. 30 instances of human infection from exposure to animals. In 25 of the spillover events, no subsequent human-to-human occurred. In 3 of the spillover events, exactly one human-to-human transmission occurred from the initially infected human with no further transmission (final size of 2 infections). In one spillover event, there was an outbreak of final size 20 infections, and another spillover event produced an outbreak of final size 50 infections. What values of R and k would best characterize this set of observations?
 
-We can make use of the `pFinalSize()` function to create a (log) likelihood function for this dataset of outbreak clusters. First, we write a function called `pClusterSizes()` that calculates the probabilities of the four different final sizes observed (1, 2, 20, and 50) for given values of R and k:
+We can make use of the `pFinalSize()` function to create a (log) likelihood function for this dataset of outbreak clusters. First, we write a function called `pClusterSizes()` that calculates the probabilities of the four different final sizes observed (1, 2, 20, and 50) for given values of $R$ and $k$:
 
 ```{r}
 pClusterSizes <- function(R,k) pFinalSize(n=1, j=c(1,2,20,50), R=R, k=k)
@@ -103,7 +105,7 @@ What is the likelihood of observing exactly these 30 outbreak sizes after 30 spi
 exp(logLikData(1.5,1))
 ```
 
-Can we do better for different choices of R and k? We can use `optim` to locate the maximum likelihood solution for R and k by optimizing the log likelihood:
+Can we do better for different choices of R and k? We can use `optim` to locate the maximum likelihood solution for R and k by optimizing the log likelihood using the built in R function optim():
 
 ```{r}
 optim(f = function(x) ifelse(all(x>0), -logLikData(x[1],x[2]), Inf), par = c(R=1,k=1))$par
@@ -164,14 +166,14 @@ With estimates based on past outbreaks in hand, what can we say about what may h
 
 ### Exceedance probability
 
-For example, from the estimates above with R = 0.7, k = 0.08 applied to all cases, what is the probability that a singles spillover event will result in an outbreak of 100 or more cases, i.e. more than twice as big as the previous worst outbreak?
+For example, from the estimates above with R = 0.7, k = 0.08 applied to all cases, what is the probability that a singles spillover event will result in an outbreak of 100 or more cases, i.e. more than twice as big as the previous worst outbreak? (I am confused about the "worst outbreak". You also mention this in the intro. The worst outbreak ever recorded is going to vary by pathogen. Is there a way to make the "worst outbreak" a random variable? Why 100 cases? Or can you clarify how this is accounted for in your model?)
 
 ```{r}
 1-sum(pFinalSize(1,1:99,0.7,0.08))
 ```
 The model estimates that there would be about 0.5% or roughly 1-in-200 chance of a 100-or-more case outbreak after a future spillover event.
 
-This type of result is known as an "exceedance" probability. There is not a separate function for calculating exceedance, we only have a function to calculate the probability of an exact final size. Hence, the above function call to `pFinalSize` calculates the probability of a final size exactly equal to 1, 2, ... 99, and one minus the sum of these probabilities is the exceedance probability required.
+This type of result is known as an "exceedance" probability. (This answers my question above! The user can set the seqneunce 1:99, correct? Can this be explained earlier?) There is not a separate function for calculating exceedance, we only have a function to calculate the probability of an exact final size. Hence, the above function call to `pFinalSize` calculates the probability of a final size exactly equal to 1, 2, ... 99, and one minus the sum of these probabilities is the exceedance probability required.
 
 How does this estimate change for the result from the second model that found $R_0$ = 1.08 and $k_0$ = 0.06, under the assumption of a control reproductive number $R_c = R_0/2$ and $k_c=k_0$?
 
@@ -220,3 +222,4 @@ In the H5N1 data analysis example, these functions could be used to include data
 pSizeAtGen(g=2,n=1,j=10,R=0.7,k=0.08)
 pSizeAtGenSwitch1(g=2,n=1,j=10,R0=1.08,k0=0.06,Rc=0.54,kc=0.06)
 ```
+
