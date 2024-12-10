@@ -34,5 +34,10 @@ Useful links:
 \author{
 \strong{Maintainer}: Damon Toth \email{damon.toth@hsc.utah.edu} (\href{https://orcid.org/0000-0001-7393-4814}{ORCID})
 
+Other contributors:
+\itemize{
+  \item Centers for Disease Control and Prevention's Center for Forecasting and Outbreak Analytics (Cooperative agreement CDC-RFA-FT-23-0069) [funder]
+}
+
 }
 \keyword{internal}

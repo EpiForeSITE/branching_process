@@ -2,8 +2,9 @@ Package: branchingprocess
 Title: Branching Process Outbreak Simulator
 Version: 0.0-9
 Authors@R: 
-    person("Damon", "Toth", , "damon.toth@hsc.utah.edu", role = c("aut", "cre"),
-           comment = c(ORCID = "0000-0001-7393-4814"))
+    c(person("Damon", "Toth", , "damon.toth@hsc.utah.edu", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0001-7393-4814")),
+    person("Centers for Disease Control and Prevention's Center for Forecasting and Outbreak Analytics", role="fnd", comment = "Cooperative agreement CDC-RFA-FT-23-0069"))
 Description: Quantifies risk posed by individual importers of a novel transmissible pathogen to a generic population, with intervention effects. Scenarios(s) Modeled: Novel introduction of transmissible pathogen by infected traveler, by accidentally infected laboratory worker, or similar scenario; intervention scenarios for improved detection of initial case and for delayed mitigation after ongoing outbreak is detected.
 License: MIT + file LICENSE
 Encoding: UTF-8
