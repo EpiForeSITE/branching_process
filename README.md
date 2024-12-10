@@ -5,25 +5,15 @@
 [![pkgdown](https://github.com/EpiForeSITE/branching_process/actions/workflows/pkgdown.yaml/badge.svg)](https://github.com/EpiForeSITE/branching_process/actions/workflows/pkgdown.yaml)
 <!-- badges: end -->
 
-## Infectious disease outbreak quantification using a branching process model with negative binomial offspring distribution
+## Branching process outbreak simulator
 
-This package provides functions that quantify infectious disease outbreaks
-using a branching process, a stochastic process in which each individual in
-generation n produces a random number of individuals in generation n+1,
-continuing for some number of generations or until there are no individuals
-remaining.
-
-The random number of next-generation individuals produced by each individual
-is drawn from the offspring distribution, a discrete probability distribution
-with non-negative range. To model infectious disease outbreaks, it is common
-to use a negative binomial offspring distribution, parameterized by the mean
-`R` and dispersion parameter `k`. This parameterization is equivalent to
-using mu = R and size = k in R's "NegBinomial", e.g. dnbinom(x, mu=R, size=k) would give the density,  i.e. the probability of exactly x transmissions from one individual.
-
-The functions in the package can be used to quantify the risk posed by individual importers of a novel transmissible
-pathogen to a generic population, including intervention effects. They can also be used for transmission parameter estimation, e.g. via maximum likelihood, for observed outbreak clusters, such as the basic reproduction number, a dispersion parameter quantifying variance in transmission, and a post-control reproduction number.
-
-Many functions in the package were used in the following publications.
+Quantifies risk posed by individual importers of a novel transmissible
+pathogen to a generic population, with intervention effects. Scenarios
+modeled: novel introduction of transmissible pathogen by an infected
+traveler, an accidentally infected laboratory worker, a zoonotic
+spillover event, or similar scenario. Intervention scenarios for
+improved detection of initial case and for delayed mitigation after
+ongoing outbreak is detected.
 
 - Toth D, Gundlapalli A, Khader K, Pettey W, Rubin M, Adler F, Samore M
   (2015). Estimates of outbreak risk from new introductions of Ebola
@@ -34,6 +24,10 @@ Many functions in the package were used in the following publications.
   risk of large or long-lasting outbreaks of Middle East respiratory
   syndrome after importations outside the Arabian Peninsula. Epidemics,
   16, 27-32. <https://doi.org/10.1016/j.epidem.2016.04.002>
+
+Work to create this software tool was made possible by cooperative
+agreement CDC-RFA-FT-23-0069 from the CDC’s Center for Forecasting and
+Outbreak Analytics.
 
 ## Installing the package
 
@@ -49,7 +43,7 @@ To cite the package in publications, please use:
 
     ## To cite package 'branchingprocess' in publications use:
     ## 
-    ##   Toth D (????). _Branching Process Outbreak Simulator_. R package
+    ##   Toth D (2024). _Branching Process Outbreak Simulator_. R package
     ##   version 0.0-9, <https://epiforesite.github.io/branching_process/>.
     ## 
     ## A BibTeX entry for LaTeX users is
@@ -58,6 +52,7 @@ To cite the package in publications, please use:
     ##     heather = {To cite branchingprocess in publications use:},
     ##     title = {Branching Process Outbreak Simulator},
     ##     author = {Damon Toth},
+    ##     year = {2024},
     ##     note = {R package version 0.0-9},
     ##     url = {https://epiforesite.github.io/branching_process/},
     ##   }
