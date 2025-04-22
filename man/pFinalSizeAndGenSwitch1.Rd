@@ -2,7 +2,7 @@
 % Please edit documentation in R/pFinalSizeAndGenSwitch1.R
 \name{pFinalSizeAndGenSwitch1}
 \alias{pFinalSizeAndGenSwitch1}
-\title{Joint probability of outbreak final size and number of transmission generations}
+\title{Joint probability of outbreak final size and number of transmission generations with offspring distribution parameters switched after generation one}
 \usage{
 pFinalSizeAndGenSwitch1(g, n, j, R0, k0, Rc, kc)
 }
@@ -25,7 +25,7 @@ pFinalSizeAndGenSwitch1(g, n, j, R0, k0, Rc, kc)
 The joint probability of outbreak final size and number of transmission generations
 }
 \description{
-Joint probability of outbreak final size and number of transmission generations
+Joint probability of outbreak final size and number of transmission generations with offspring distribution parameters switched after generation one
 }
 \examples{
 # Probability that 1 initial infection leads to an outbreak of final size 20 over exactly

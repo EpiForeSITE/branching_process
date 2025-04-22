@@ -1,4 +1,4 @@
-#' Joint probability of outbreak final size and number of transmission generations
+#' Joint probability of outbreak final size and number of transmission generations with offspring distribution parameters switched after generation one
 #'
 #' @param g Number of generations
 #' @param n Number of initial cases
