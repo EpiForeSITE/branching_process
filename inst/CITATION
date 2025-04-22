@@ -1,6 +1,6 @@
 year <- sub("-.*", "", meta$Date)
 note <- sprintf("R package version %s", meta$Version)
-title <- sprintf("%s: %s%", meta$Package, meta$Title)
+title <- sprintf("%s: %s", meta$Package, meta$Title)
 
 bibentry(
   heather="To cite branchingprocess in publications use:",
