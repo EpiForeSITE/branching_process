@@ -1,5 +1,5 @@
 Package: branchingprocess
-Title: Branching Process Outbreak Simulator
+Title: Calculate Outbreak Probabilities for a Branching Process Model 
 Version: 0.1.0
 Authors@R: 
     c(person("Damon", "Toth", , "damon.toth@hsc.utah.edu", role = c("aut", "cre"),
@@ -8,7 +8,11 @@ Authors@R:
            comment = c(ORCID = "0000-0003-4728-4023")),
            person("Centers for Disease Control and Prevention's Center for Forecasting and Outbreak Analytics",
            role="fnd", comment = "Cooperative agreement CDC-RFA-FT-23-0069"))
-Description: Quantifies risk posed by individual importers of a novel transmissible pathogen to a generic population, with intervention effects. Scenarios(s) Modeled: Novel introduction of transmissible pathogen by infected traveler, by accidentally infected laboratory worker, or similar scenario; intervention scenarios for improved detection of initial case and for delayed mitigation after ongoing outbreak is detected.
+Description: Quantify outbreak risk posed by individual importers of a transmissible
+    pathogen. Input parameters of negative binomial offspring distributions for the
+    number of transmissions from each infected individual and initial number of
+    infected. Calculate probabilities of final outbreak size, generations of
+    transmission, and outbreak size by transmission generation.
 License: MIT + file LICENSE
 Encoding: UTF-8
 URL: https://github.com/EpiForeSITE/branching_process,
