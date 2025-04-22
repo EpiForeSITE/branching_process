@@ -1,4 +1,6 @@
 
+# branchingprocess
+
 <!-- badges: start -->
 
 [![ForeSITE
@@ -9,7 +11,7 @@ Group](https://github.com/EpiForeSITE/software/raw/e82ed88f75e0fe5c0a1a3b38c2b94
 
 ## Calculate Outbreak Probabilities for a Branching Process Model
 
-The goal of branchingprocess is to quantify outbreak risk posed by
+The goal of `branchingprocess` is to quantify outbreak risk posed by
 individual importers of a transmissible pathogen. Input parameters of
 negative binomial offspring distributions for the number of
 transmissions from each infected individual and initial number of
@@ -32,30 +34,17 @@ Work to create this software tool was made possible by cooperative
 agreement CDC-RFA-FT-23-0069 from the CDC’s Center for Forecasting and
 Outbreak Analytics.
 
-## Installing the package
+## Installation
 
-To install the package, you can use the following code:
+You can install the development version of `branchingprocess` from
+GitHub with:
 
 ``` r
 devtools::install_github("EpiForeSITE/branching_process")
 ```
 
-## To cite the package in publications
+You can install branchingprocess from CRAN with:
 
-To cite the package in publications, please use:
-
-    ## To cite package 'branchingprocess' in publications use:
-    ## 
-    ##   Toth D (2024). _Branching Process Outbreak Simulator_. R package
-    ##   version 0.0-9, <https://epiforesite.github.io/branching_process/>.
-    ## 
-    ## A BibTeX entry for LaTeX users is
-    ## 
-    ##   @Manual{,
-    ##     heather = {To cite branchingprocess in publications use:},
-    ##     title = {Branching Process Outbreak Simulator},
-    ##     author = {Damon Toth},
-    ##     year = {2024},
-    ##     note = {R package version 0.0-9},
-    ##     url = {https://epiforesite.github.io/branching_process/},
-    ##   }
+``` r
+install.packages("branchingprocess")
+```

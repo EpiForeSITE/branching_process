@@ -2,6 +2,8 @@
 output: github_document
 ---
 
+# branchingprocess
+
 <!-- badges: start -->
 [![ForeSITE Group](https://github.com/EpiForeSITE/software/raw/e82ed88f75e0fe5c0a1a3b38c2b94509f122019c/docs/assets/foresite-software-badge.svg)](https://github.com/EpiForeSITE)
 [![R-CMD-check](https://github.com/EpiForeSITE/branching_process/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/EpiForeSITE/branching_process/actions/workflows/R-CMD-check.yaml)
@@ -10,7 +12,7 @@ output: github_document
 
 ## Calculate Outbreak Probabilities for a Branching Process Model
 
-The goal of branchingprocess is to quantify outbreak risk posed by individual 
+The goal of `branchingprocess` is to quantify outbreak risk posed by individual 
 importers of a transmissible pathogen. Input parameters of negative binomial
 offspring distributions for the number of transmissions from each infected 
 individual and initial number of infected. Calculate probabilities of final 
@@ -24,20 +26,15 @@ found in the following manuscripts:
 
 Work to create this software tool was made possible by cooperative agreement CDC-RFA-FT-23-0069 from the CDC’s Center for Forecasting and Outbreak Analytics.
 
-## Installing the package
+## Installation
 
-To install the package, you can use the following code:
+You can install the development version of `branchingprocess` from GitHub with:
 
 ```r
 devtools::install_github("EpiForeSITE/branching_process")
 ```
+You can install branchingprocess from CRAN with:
 
-## To cite the package in publications
-
-To cite the package in publications, please use:
-
-```{r citation, echo=FALSE}
-citation("branchingprocess")
+```r
+install.packages("branchingprocess")
 ```
-
-
