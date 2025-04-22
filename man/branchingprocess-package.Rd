@@ -36,6 +36,7 @@ Useful links:
 
 Other contributors:
 \itemize{
+  \item Erin Clancey \email{erin.clancey@wsu.edu} (\href{https://orcid.org/0000-0003-4728-4023}{ORCID}) [contributor]
   \item Centers for Disease Control and Prevention's Center for Forecasting and Outbreak Analytics (Cooperative agreement CDC-RFA-FT-23-0069) [funder]
 }
 

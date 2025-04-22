@@ -4,7 +4,10 @@ Version: 0.1.0
 Authors@R: 
     c(person("Damon", "Toth", , "damon.toth@hsc.utah.edu", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-7393-4814")),
-    person("Centers for Disease Control and Prevention's Center for Forecasting and Outbreak Analytics", role="fnd", comment = "Cooperative agreement CDC-RFA-FT-23-0069"))
+           person("Erin", "Clancey", , "erin.clancey@wsu.edu", role = c("ctb"),
+           comment = c(ORCID = "0000-0003-4728-4023")),
+           person("Centers for Disease Control and Prevention's Center for Forecasting and Outbreak Analytics",
+           role="fnd", comment = "Cooperative agreement CDC-RFA-FT-23-0069"))
 Description: Quantifies risk posed by individual importers of a novel transmissible pathogen to a generic population, with intervention effects. Scenarios(s) Modeled: Novel introduction of transmissible pathogen by infected traveler, by accidentally infected laboratory worker, or similar scenario; intervention scenarios for improved detection of initial case and for delayed mitigation after ongoing outbreak is detected.
 License: MIT + file LICENSE
 Encoding: UTF-8
