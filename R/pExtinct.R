@@ -3,6 +3,7 @@
 #' @param R Reproduction number: mean of negative binomial offspring distribution
 #' @param k Dispersion parameter of negative binomial offspring distribution
 #' @author Damon Toth
+#' @importFrom stats uniroot
 #' @returns The probability of outbreak extinction
 #' @examples
 #' # Probability that a single case leads to an extinct outbreak when the offspring distribution
