@@ -35,9 +35,7 @@ The random number of "offspring" infections produced by each infected individual
 
 $R$, the reproduction number, is the expected (mean) number of transmissions from an infected individual. For a fixed value of $R$, a lower dispersion $k$ gives a higher variance of the negative binomial distribution: variance = $R + R^2/k$. Infectious diseases with a lower value of $k$ exhibit a higher rate of "superspreading" events, in which a single individual produces a number of transmission substantially higher than the mean. 
 
-(I deleted this because it is redundant with what you have above.) 
-
-##`pNextGenSize(x,y,R,k)` function
+## `pNextGenSize(x,y,R,k)` function
 
 The function `pNextGenSize(x,y,R,k)` extends the `dnbinom()` function to more than one potentially transmitting individual: it calculates the probability that `x` individuals in one generation transmit to a total of `y` individuals in the next generation, where each of the `x` individuals independently transmits according the negative binomial distribution with parameters `R` and `k`.
 
