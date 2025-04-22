@@ -1,14 +1,15 @@
 year <- sub("-.*", "", meta$Date)
 note <- sprintf("R package version %s", meta$Version)
+title <- meta$title
 
 bibentry(
   heather="To cite branchingprocess in publications use:",
   bibtype="Manual",
-  title="Branching Process Outbreak Simulator",
+  title=title,
   author=c(
     person("Damon", "Toth", role=c("aut","cre"), email="damon.toth@hsc.utah.edu", comment=c(ORCID="0000-0001-7393-4814"))
   ),
-  year=2024,
+  year=2025,
   note=note,
   url="https://epiforesite.github.io/branching_process/"
   )
