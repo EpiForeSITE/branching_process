@@ -1,6 +1,6 @@
 Package: branchingprocess
 Title: Branching Process Outbreak Simulator
-Version: 0.0-9
+Version: 0.1.0
 Authors@R: 
     c(person("Damon", "Toth", , "damon.toth@hsc.utah.edu", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-7393-4814")),
