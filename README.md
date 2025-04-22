@@ -1,19 +1,22 @@
 
 <!-- badges: start -->
-[![ForeSITE Group](https://github.com/EpiForeSITE/software/raw/e82ed88f75e0fe5c0a1a3b38c2b94509f122019c/docs/assets/foresite-software-badge.svg)](https://github.com/EpiForeSITE)
+
+[![ForeSITE
+Group](https://github.com/EpiForeSITE/software/raw/e82ed88f75e0fe5c0a1a3b38c2b94509f122019c/docs/assets/foresite-software-badge.svg)](https://github.com/EpiForeSITE)
 [![R-CMD-check](https://github.com/EpiForeSITE/branching_process/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/EpiForeSITE/branching_process/actions/workflows/R-CMD-check.yaml)
 [![pkgdown](https://github.com/EpiForeSITE/branching_process/actions/workflows/pkgdown.yaml/badge.svg)](https://github.com/EpiForeSITE/branching_process/actions/workflows/pkgdown.yaml)
 <!-- badges: end -->
 
-## Branching process outbreak simulator
+## Calculate Outbreak Probabilities for a Branching Process Model
 
-Quantifies risk posed by individual importers of a novel transmissible
-pathogen to a generic population, with intervention effects. Scenarios
-modeled: novel introduction of transmissible pathogen by an infected
-traveler, an accidentally infected laboratory worker, a zoonotic
-spillover event, or similar scenario. Intervention scenarios for
-improved detection of initial case and for delayed mitigation after
-ongoing outbreak is detected.
+The goal of branchingprocess is to quantify outbreak risk posed by
+individual importers of a transmissible pathogen. Input parameters of
+negative binomial offspring distributions for the number of
+transmissions from each infected individual and initial number of
+infected. Calculate probabilities of final outbreak size and generations
+of transmission. A full description and derivation of the mathematical
+results implemented in these functions can be found in the following
+manuscripts:
 
 - Toth D, Gundlapalli A, Khader K, Pettey W, Rubin M, Adler F, Samore M
   (2015). Estimates of outbreak risk from new introductions of Ebola
