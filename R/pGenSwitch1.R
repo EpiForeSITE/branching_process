@@ -1,5 +1,6 @@
 #' Probability that one initial case leads to an outbreak lasting
-#' less than g generations of transmission.
+#' less than g generations of transmission, with offspring distribution 
+#' parameters switched after generation one.
 #'
 #' @param gMax Maximum number of generations
 #' @param R0 Basic reproduction number: mean of negative binomial offspring distribution from generation one

@@ -3,7 +3,8 @@
 \name{pGenSwitch1}
 \alias{pGenSwitch1}
 \title{Probability that one initial case leads to an outbreak lasting
-less than g generations of transmission.}
+less than g generations of transmission, with offspring distribution
+parameters switched after generation one.}
 \usage{
 pGenSwitch1(gMax, R0, k0, Rc, kc)
 }
@@ -23,7 +24,8 @@ A vector of probabilities for each number of generations from 1 to gmax
 }
 \description{
 Probability that one initial case leads to an outbreak lasting
-less than g generations of transmission.
+less than g generations of transmission, with offspring distribution
+parameters switched after generation one.
 }
 \examples{
 # Probability of outbreak lasting less than 1,2,3,...,10 generations:
