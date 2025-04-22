@@ -1,6 +1,6 @@
 
 <!-- badges: start -->
-[![ForeSITE Group](https://github.com/EpiForeSITE/software/blob/e82ed88f75e0fe5c0a1a3b38c2b94509f122019c/docs/assets/foresite-software-badge.svg)](https://github.com/EpiForeSITE)
+[![ForeSITE Group](https://github.com/EpiForeSITE/software/raw/e82ed88f75e0fe5c0a1a3b38c2b94509f122019c/docs/assets/foresite-software-badge.svg)](https://github.com/EpiForeSITE)
 [![R-CMD-check](https://github.com/EpiForeSITE/branching_process/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/EpiForeSITE/branching_process/actions/workflows/R-CMD-check.yaml)
 [![pkgdown](https://github.com/EpiForeSITE/branching_process/actions/workflows/pkgdown.yaml/badge.svg)](https://github.com/EpiForeSITE/branching_process/actions/workflows/pkgdown.yaml)
 <!-- badges: end -->
