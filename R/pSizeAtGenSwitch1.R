@@ -1,5 +1,6 @@
 #' Probability that n initial cases lead to an outbreak that lasts at least g generations
-#' of transmission AND has exactly j total cases after generation g
+#' of transmission AND has exactly j total cases after generation g, with offspring 
+#' distribution parameters switched after generation one
 #'
 #' @param g Number of generations of transmission
 #' @param n Number of initial cases

@@ -3,7 +3,8 @@
 \name{pSizeAtGenSwitch1}
 \alias{pSizeAtGenSwitch1}
 \title{Probability that n initial cases lead to an outbreak that lasts at least g generations
-of transmission AND has exactly j total cases after generation g}
+of transmission AND has exactly j total cases after generation g, with offspring
+distribution parameters switched after generation one}
 \usage{
 pSizeAtGenSwitch1(g, n, j, R0, k0, Rc, kc)
 }
@@ -27,7 +28,8 @@ The probability of the given outbreak size at the given transmission generation
 }
 \description{
 Probability that n initial cases lead to an outbreak that lasts at least g generations
-of transmission AND has exactly j total cases after generation g
+of transmission AND has exactly j total cases after generation g, with offspring
+distribution parameters switched after generation one
 }
 \examples{
 #Probability that 10 initial cases leads to an outbreak lasting at least
