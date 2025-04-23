@@ -16,9 +16,9 @@ Description: Quantify outbreak risk posed by individual importers of a transmiss
     and Toth et al. (2016) <doi:10.1016/j.epidem.2016.04.002>.
 License: MIT + file LICENSE
 Encoding: UTF-8
-URL: https://github.com/EpiForeSITE/branching_process,
-    https://epiforesite.github.io/branching_process/
-BugReports: https://github.com/EpiForeSITE/branching_process/issues
+URL: https://github.com/EpiForeSITE/branchingprocess,
+    https://epiforesite.github.io/branchingprocess/
+BugReports: https://github.com/EpiForeSITE/branchingprocess/issues
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 Imports: 
