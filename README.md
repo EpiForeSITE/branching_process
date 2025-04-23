@@ -5,8 +5,8 @@
 
 [![ForeSITE
 Group](https://github.com/EpiForeSITE/software/raw/e82ed88f75e0fe5c0a1a3b38c2b94509f122019c/docs/assets/foresite-software-badge.svg)](https://github.com/EpiForeSITE)
-[![R-CMD-check](https://github.com/EpiForeSITE/branching_process/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/EpiForeSITE/branching_process/actions/workflows/R-CMD-check.yaml)
-[![pkgdown](https://github.com/EpiForeSITE/branching_process/actions/workflows/pkgdown.yaml/badge.svg)](https://github.com/EpiForeSITE/branching_process/actions/workflows/pkgdown.yaml)
+[![R-CMD-check](https://github.com/EpiForeSITE/branchingprocess/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/EpiForeSITE/branchingprocess/actions/workflows/R-CMD-check.yaml)
+[![pkgdown](https://github.com/EpiForeSITE/branchingprocess/actions/workflows/pkgdown.yaml/badge.svg)](https://github.com/EpiForeSITE/branchingprocess/actions/workflows/pkgdown.yaml)
 <!-- badges: end -->
 
 ## Calculate Outbreak Probabilities for a Branching Process Model
@@ -40,7 +40,7 @@ You can install the development version of `branchingprocess` from
 GitHub with:
 
 ``` r
-devtools::install_github("EpiForeSITE/branching_process")
+devtools::install_github("EpiForeSITE/branchingprocess")
 ```
 
 You can install branchingprocess from CRAN with:
