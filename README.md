@@ -3,6 +3,10 @@
 
 <!-- badges: start -->
 
+[![CRAN
+status](https://www.r-pkg.org/badges/version/branchingprocess)](https://CRAN.R-project.org/package=branchingprocess)
+[![CRANlogs
+downloads](https://cranlogs.r-pkg.org/badges/branchingprocess)](https://cran.r-project.org/package=branchingprocess)
 [![ForeSITE
 Group](https://github.com/EpiForeSITE/software/raw/e82ed88f75e0fe5c0a1a3b38c2b94509f122019c/docs/assets/foresite-software-badge.svg)](https://github.com/EpiForeSITE)
 [![R-CMD-check](https://github.com/EpiForeSITE/branchingprocess/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/EpiForeSITE/branchingprocess/actions/workflows/R-CMD-check.yaml)
