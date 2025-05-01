@@ -46,14 +46,15 @@ qAnyPoisGen2 <- function(n,j,R0,k0,Rc){
 }
 
 
-dist0 <- qAny(1,1:20000,Rest,kest)
-dist1a <- Vectorize(qAnyGen1)(1,1:1000,R0est1,kest1,Rcest1)
-dist1b <- Vectorize(qAnyGen1)(1,1:1000,R0estGeom1,k0estGeom1,RcestGeom1,1)
-dist1c <- Vectorize(qAnyPoisGen1)(1,1:1000,R0estPois1,k0estPois1,RcestPois1)
+dist0 <- pFinalSize(1,1:1000,Rest,kest)
+dist1a <- Vectorize(pFinalSizeSwitch1)(1,1:1000,R0est1,kest1,Rcest1,kest1)
+dist1b <- Vectorize(pFinalSizeSwitch1)(1,1:1000,R0estGeom1,k0estGeom1,RcestGeom1,1)
+dist1c <- Vectorize(pFinalSizeSwitch1)(1,1:1000,R0estPois1,k0estPois1,RcestPois1,Inf)
 
-dist2a <- Vectorize(qAnyGen2)(1,1:1000,R0est2,kest2,Rcest2)
-dist2b <- Vectorize(qAnyGen2)(1,1:1000,R0estGeom2,k0estGeom2,RcestGeom2,1)
+dist2a <- Vectorize(pFinalSizeSwitch2)(1,1:1000,R0est2,kest2,Rcest2,kest2)
+dist2b <- Vectorize(pFinalSizeSwitch2)(1,1:1000,R0estGeom2,k0estGeom2,RcestGeom2,1)
 dist2c <- Vectorize(qAnyPoisGen2)(1,1:1000,R0estPois2,k0estPois2,RcestPois2)
+dist2cnew <- Vectorize(pFinalSizeSwitch2)(1,1:1000,R0estPois2,k0estPois2,RcestPois2,Inf)
 
 tableTotVals <- c(10,100,500,1000)
 tableLeft <- rbind((1-cumsum(dist0))[tableTotVals]*100,
