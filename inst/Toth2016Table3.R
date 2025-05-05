@@ -1,5 +1,3 @@
-rm(list=ls())
-
 Rest <- 0.8652294
 kest <- 0.03539390
 R0est1 <- 5.2123787
@@ -21,40 +19,13 @@ R0estPois2 <- 2.1966033
 k0estPois2 <- 0.07574568
 RcestPois2 <- 0.05991646
  
-#p is the probability of y total transmission from x independent patients
-lp <- function(x,y,R,k) lgamma(k*x+y)-lgamma(k*x)-lgamma(y+1)+y*log(R/k)-(k*x+y)*log(1+R/k)
-p <- function(x,y,R,k) exp(lp(x,y,R,k))
-
-lpPois <- function(x,y,R) y*(log(x)+log(R))-x*R-lfactorial(y)
-pPois <- function(x,y,R) exp(lpPois(x,y,R))
-
-qAny <- function(n,j,R,k) p(j,j-n,R,k)*n/j
-qAnyPois <- function(n,j,R) pPois(j,j-n,R)*n/j
-
-qAnyGen1 <- function(n,j,R0,k0,Rc,kc=k0) ifelse(j==n,p(n,0,R0,k0),sum(p(n,1:(j-n),R0,k0)*qAny(1:(j-n),j-n,Rc,kc)))
-qAnyPoisGen1 <- function(n,j,R0,k0,Rc) ifelse(j==n,p(n,0,R0,k0),sum(p(n,1:(j-n),R0,k0)*qAnyPois(1:(j-n),j-n,Rc)))
-
-qAnyGen2 <- function(n,j,R0,k0,Rc,kc=k0){
-	f <- function(x) p(n,x,R0,k0) * sum(p(x,1:(j-n-x),R0,k0) * qAny(1:(j-n-x),j-n-x,Rc,kc))
-	ifelse(j==n,p(n,0,R0,k0),ifelse(j == n+1,p(n,1,R0,k0) * p(1,0,R0,k0), 
-		 p(n,j-n,R0,k0) * p(j-n,0,R0,k0) + sum(Vectorize(f)(1:(j-n-1)))))
-}
-qAnyPoisGen2 <- function(n,j,R0,k0,Rc){
-	f <- function(x) p(n,x,R0,k0) * sum(p(x,1:(j-n-x),R0,k0) * qAnyPois(1:(j-n-x),j-n-x,Rc))
-	ifelse(j==n,p(n,0,R0,k0),ifelse(j == n+1,p(n,1,R0,k0) * p(1,0,R0,k0), 
-		 p(n,j-n,R0,k0) * p(j-n,0,R0,k0) + sum(Vectorize(f)(1:(j-n-1)))))
-}
-
-
 dist0 <- pFinalSize(1,1:1000,Rest,kest)
 dist1a <- Vectorize(pFinalSizeSwitch1)(1,1:1000,R0est1,kest1,Rcest1,kest1)
 dist1b <- Vectorize(pFinalSizeSwitch1)(1,1:1000,R0estGeom1,k0estGeom1,RcestGeom1,1)
 dist1c <- Vectorize(pFinalSizeSwitch1)(1,1:1000,R0estPois1,k0estPois1,RcestPois1,Inf)
-
 dist2a <- Vectorize(pFinalSizeSwitch2)(1,1:1000,R0est2,kest2,Rcest2,kest2)
 dist2b <- Vectorize(pFinalSizeSwitch2)(1,1:1000,R0estGeom2,k0estGeom2,RcestGeom2,1)
-dist2c <- Vectorize(qAnyPoisGen2)(1,1:1000,R0estPois2,k0estPois2,RcestPois2)
-dist2cnew <- Vectorize(pFinalSizeSwitch2)(1,1:1000,R0estPois2,k0estPois2,RcestPois2,Inf)
+dist2c <- Vectorize(pFinalSizeSwitch2)(1,1:1000,R0estPois2,k0estPois2,RcestPois2,Inf)
 
 tableTotVals <- c(10,100,500,1000)
 tableLeft <- rbind((1-cumsum(dist0))[tableTotVals]*100,
@@ -65,34 +36,14 @@ tableLeft <- rbind((1-cumsum(dist0))[tableTotVals]*100,
 			(1-cumsum(dist2b))[tableTotVals]*100,
 			(1-cumsum(dist2c))[tableTotVals]*100)
 
-#pgl[h] is the probability of observing less than h generations of transmission
-getPgl <- function(R0,Rc,k0,kc,genSwitch=Inf){
-	maxGen <- 100
-	R <- rep(R0,maxGen); k <- rep(k0,maxGen)
-	if(genSwitch < maxGen){
-		R[(genSwitch+1):maxGen] <- Rc
-		k[(genSwitch+1):maxGen] <- kc
-	}
-	pgl <- (1+R[1]/k[1])^(-k[1])
-	for(h in 2:maxGen) pgl[h] <- (1+R[h]/k[h]*(1-pgl[h-1]))^(-k[h])	
-	pgl
-}
-getPglPois <- function(R0,Rc,k0,genSwitch=Inf){
-	maxGen <- 100
-	pgl <- (1+R0/k0)^(-k0)
-	for(h in 2:maxGen) pgl[h] <- ifelse(h <= genSwitch,(1+R0/k0*(1-pgl[h-1]))^(-k0),
-									   exp(-Rc*(1-pgl[h-1])))	
-	pgl
-}
-
-pgl <- getPgl(Rest,Rest,kest,kest)
-pgl1a <- getPgl(R0est1,Rcest1,kest1,kest1,1)
-pgl1b <- getPgl(R0estGeom1,RcestGeom1,k0estGeom1,1,1)
-pgl1c <- getPglPois(R0estPois1,RcestPois1,k0estPois1,1)
-
-pgl2a <- getPgl(R0est2,Rcest2,kest2,kest2,2)
-pgl2b <- getPgl(R0estGeom2,RcestGeom2,k0estGeom2,1,2)
-pgl2c <- getPglPois(R0estPois2,RcestPois2,k0estPois2,2)
+maxGen <- 5
+pgl <- pGen(maxGen,Rest,kest)
+pgl1a <- pGenSwitch1(maxGen,R0est1,kest1,Rcest1,kest1)
+pgl1b <- pGenSwitch1(maxGen,R0estGeom1,k0estGeom1,RcestGeom1,1)
+pgl1c <- pGenSwitch1(maxGen,R0estPois1,k0estPois1,RcestPois1,Inf)
+pgl2a <- pGenSwitch2(maxGen,R0est2,kest2,Rcest2,kest2)
+pgl2b <- pGenSwitch2(maxGen,R0estGeom2,k0estGeom2,RcestGeom2,1)
+pgl2c <- pGenSwitch2(maxGen,R0estPois2,k0estPois2,RcestPois2,Inf)
 
 #pgg[h] is the probability of observing at least h generations of transmission		
 pgg <- 1-pgl

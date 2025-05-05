@@ -12,7 +12,11 @@
 #' @export
 pGen <- function(gMax,R,k){
   pgl <- rep(0,gMax)
-  pgl[1] <- (1+R/k)^(-k)
-  if(gMax > 1) for(g in 2:gMax) pgl[g] <- (1+R/k*(1-pgl[g-1]))^(-k)
+  pgl[1] <- ifelse(k < Inf, (1+R/k)^(-k), exp(-R))
+  if(gMax > 1){
+    for(g in 2:gMax){
+      pgl[g] <- ifelse(k < Inf, (1+R/k*(1-pgl[g-1]))^(-k), exp(-R*(1-pgl[g-1])))
+    }
+  }
   pgl
 }
